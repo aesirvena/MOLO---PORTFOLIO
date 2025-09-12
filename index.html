@@ -64,8 +64,11 @@
         </div>
         <div class="column right">
           <div class="text">I'm Nicole Marie Molo<span class="typing-2"></span></div>
-          <p>Hi, I'm a passionate programmer and web developer with expertise in front-end and back-end development. With a strong eye for design and a commitment to creating seamless user experiences, I specialize in crafting visually appealing and functional websites. Let's bring your ideas to life together!</p>
-        </div>
+            <p id="about-bio" contenteditable="false">
+              Hi, I'm a passionate programmer and web developer with expertise in front-end and back-end development. With a strong eye for design and a commitment to creating seamless user experiences, I specialize in crafting visually appealing and functional websites. Let's bring your ideas to life together!
+            </p>
+            <button id="edit-about-btn">Edit</button>
+          </div>
       </div>
     </div>
   </section>
@@ -231,6 +234,7 @@
       </script> 2025 <i class="fa fa-heart"></i> <a href="https://www.facebook.com/nicolemarie.molo">Nicole Marie Molo</a></p>
   </footer>
   <script>
+document.addEventListener('DOMContentLoaded', function() {
   const toggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
 
@@ -250,7 +254,34 @@
       localStorage.setItem('theme', 'light');
     }
   });
-</script>
 
+  const editBtn = document.getElementById('edit-about-btn');
+  const aboutBio = document.getElementById('about-bio');
+  let editing = false;
+
+  editBtn.addEventListener('click', () => {
+    editing = !editing;
+    aboutBio.contentEditable = editing;
+    if (editing) {
+      aboutBio.focus();
+      editBtn.textContent = 'Save';
+      aboutBio.style.background = '#fff0f6';
+      aboutBio.style.border = '1px solid #ff80b5';
+    } else {
+      editBtn.textContent = 'Edit';
+      aboutBio.style.background = '';
+      aboutBio.style.border = '';
+    }
+  });
+
+  // Optional: Save on Enter and prevent line breaks
+  aboutBio.addEventListener('keydown', function(e) {
+    if (editing && e.key === 'Enter') {
+      e.preventDefault();
+      editBtn.click();
+    }
+  });
+});
+</script>
 </body>
 </html>

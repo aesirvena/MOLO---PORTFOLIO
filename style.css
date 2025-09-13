@@ -342,6 +342,29 @@ color: #ff80b5;
 background: none;
 }
 
+/* Edit/Save button styling */
+.edit-btn, .save-btn {
+  display: inline-block;
+  background: #ffb6d9;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 28px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px #ffd6e8;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-top: 18px;
+  letter-spacing: 1px;
+}
+
+.edit-btn:hover, .save-btn:hover {
+  background: #ff80b5;
+  color: #fff0f6;
+  box-shadow: 0 4px 16px #ffb6d9;
+}
+
 /* services section styling */
 .services,
 .teams {

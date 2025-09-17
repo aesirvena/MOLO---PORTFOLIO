@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/aesirvena/MOLO---PORTFOLIO#readme",
   "dependencies": {
+    "cloudinary": "^1.41.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "multer": "^2.0.2"
+    "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0"
   }
 }
